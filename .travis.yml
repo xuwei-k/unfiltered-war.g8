@@ -1,15 +1,22 @@
 language: scala
 sudo: false
-jdk: oraclejdk7
-scala:
-  - 2.10.6
-  - 2.11.11
-script:
-  - sbt ";set g8Properties in g8 in Test ~= { _ + (\"scala_version\" -> \"$TRAVIS_SCALA_VERSION\")}; g8Test"
+jdk: oraclejdk8
 matrix:
   include:
-  - jdk: oraclejdk8
-    scala: 2.12.3
+  - scala: 2.10.6
+    env: SBT_VERSION="0.13.16"
+  - scala: 2.10.6
+    env: SBT_VERSION="1.0.2"
+  - scala: 2.11.11
+    env: SBT_VERSION="0.13.16"
+  - scala: 2.11.11
+    env: SBT_VERSION="1.0.2"
+  - scala: 2.12.4
+    env: SBT_VERSION="0.13.16"
+  - scala: 2.12.4
+    env: SBT_VERSION="1.0.2"
+script:
+  - sbt ";set g8Properties in g8 in Test ~= { _ ++ Map((\"scala_version\" -> \"$TRAVIS_SCALA_VERSION\"), (\"sbt_version\" -> \"$SBT_VERSION\")) }; g8Test"
 addons:
   apt:
     packages:
