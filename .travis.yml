@@ -13,7 +13,3 @@ matrix:
     env: SBT_VERSION="1.1.6"
 script:
   - sbt ";set g8Properties in g8 in Test ~= { _ ++ Map((\"scala_version\" -> \"$TRAVIS_SCALA_VERSION\"), (\"sbt_version\" -> \"$SBT_VERSION\")) }; g8Test"
-addons:
-  apt:
-    packages:
-    - oracle-java8-installer
