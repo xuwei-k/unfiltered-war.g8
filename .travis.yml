@@ -11,5 +11,7 @@ matrix:
     env: SBT_VERSION="0.13.18"
   - scala: 2.12.8
     env: SBT_VERSION="1.2.8"
+  - scala: 2.13.0
+    env: SBT_VERSION="1.2.8"
 script:
   - sbt ";set g8Properties in g8 in Test ~= { _ ++ Map((\"scala_version\" -> \"$TRAVIS_SCALA_VERSION\"), (\"sbt_version\" -> \"$SBT_VERSION\")) }; g8Test"
