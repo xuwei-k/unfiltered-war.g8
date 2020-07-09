@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/unfiltered/unfiltered-war.g8.svg?branch=master)](https://travis-ci.org/unfiltered/unfiltered-war.g8)
+[![Build Status](https://travis-ci.com/unfiltered/unfiltered-war.g8.svg?branch=master)](https://travis-ci.com/unfiltered/unfiltered-war.g8)
 
 A [giter8][g8] template for [Unfiltered][unfiltered] applications targeting [sbt][sbt] 0.13 and up.
 
